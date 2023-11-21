@@ -1,0 +1,343 @@
+{
+  "entity": {
+    "binary_sensor": {
+      "external_timer_1": {
+        "name": "External timer 1"
+      },
+      "external_timer_2": {
+        "name": "External timer 2"
+      },
+      "cooker_hood_switch": {
+        "name": "Cooker Hood Switch"
+      },
+      "bypass_damper": {
+        "name": "Bypass Damper"
+      },
+      "summer_winter_mode": {
+        "name": "Summer/Winter Mode",
+        "state": {
+          "off": "Winter",
+          "on": "Summer"
+        }
+      },
+      "fire_alarm": {
+        "name": "Fire Alarm",
+        "state": {
+          "off": "OK",
+          "on": "Alarm"
+        }
+      },
+      "sensor_error_supply_temperature": {
+        "name": "Sensor Error Supply Temperature",
+        "state": {
+          "off": "OK",
+          "on": "Error"
+        }
+      },
+      "sensor_error_outdoor_temperature": {
+        "name": "Sensor Error Outdoor Temperature",
+        "state": {
+          "off": "OK",
+          "on": "Error"
+        }
+      },
+      "sensor_error_extract_temperature": {
+        "name": "Sensor Error Extract Temperature",
+        "state": {
+          "off": "OK",
+          "on": "Error"
+        }
+      },
+      "sensor_error_frost_protection": {
+        "name": "Sensor Error Frost Protection",
+        "state": {
+          "off": "OK",
+          "on": "Error"
+        }
+      },
+      "sensor_error_defrost_temperature": {
+        "name": "Sensor Error Defrost Temperature",
+        "state": {
+          "off": "OK",
+          "on": "Error"
+        }
+      },
+      "dirty_filter": {
+        "name": "Dirty Filter",
+        "state": {
+          "off": "OK",
+          "on": "Dirty"
+        }
+      },
+      "supply_fan_error": {
+        "name": "Supply Fan Error",
+        "state": {
+          "off": "OK",
+          "on": "Error"
+        }
+      },
+      "extract_fan_error": {
+        "name": "Extract Fan Error",
+        "state": {
+          "off": "OK",
+          "on": "Error"
+        }
+      },
+      "frost_alarm": {
+        "name": "Frost Alarm",
+        "state": {
+          "off": "OK",
+          "on": "Alarm"
+        }
+      },
+      "rotary_heat_exchanger_failure": {
+        "name": "Rotary Heat Exchanger Failure",
+        "state": {
+          "off": "OK",
+          "on": "Failure"
+        }
+      },
+      "filter_alarm_supply_air": {
+        "name": "Filter Alarm Supply Air",
+        "state": {
+          "off": "OK",
+          "on": "Alarm"
+        }
+      },
+      "filter_alarm_extract_air": {
+        "name": "Filter Alarm Extract Air",
+        "state": {
+          "off": "OK",
+          "on": "Alarm"
+        }
+      },
+      "overheating_electrical_heater": {
+        "name": "Overheating Electrical Heater",
+        "state": {
+          "off": "OK",
+          "on": "Alarm"
+        }
+      },
+      "pump_heater_malfunction": {
+        "name": "Pump Heater Malfunction",
+        "state": {
+          "off": "OK",
+          "on": "Alarm"
+        }
+      },
+      "freezing_hot_water_battery": {
+        "name": "Freezing Hot Water Battery",
+        "state": {
+          "off": "OK",
+          "on": "Alarm"
+        }
+      },
+      "summary_alarm": {
+        "name": "Summary Alarm",
+        "state": {
+          "off": "OK",
+          "on": "Alarm"
+        }
+      },
+      "pump_cooling_malfunction": {
+        "name": "Pump Cooling Malfunction",
+        "state": {
+          "off": "OK",
+          "on": "Error"
+        }
+      },
+      "temperature_alarm": {
+        "name": "Temperature Alarm",
+        "state": {
+          "off": "OK",
+          "on": "Alarm"
+        }
+      },
+      "humidity_control_running": {
+        "name": "Humidity Control Running"
+      }
+    },
+    "climate": {
+      "climate_entity": {
+        "state_attributes": {
+          "fan_mode": {
+            "state": {
+              "0": "Low",
+              "1": "Normal",
+              "2": "High"
+            }
+          },
+          "preset_mode": {
+            "state": {
+              "0": "Stop",
+              "1": "Auto",
+              "2": "Manual",
+              "3": "Fireplace"
+            }
+          }
+        }
+      }
+    },
+    "sensor": {
+      "supply_air_temperature": {
+        "name": "Supply Air"
+      },
+      "outdoor_air_temperature": {
+        "name": "Outdoor Air"
+      },
+      "extract_air_temperature": {
+        "name": "Extract/Room Air"
+      },
+      "freezing_protection_post_heater": {
+        "name": "Freezing Protection Post Heater"
+      },
+      "defrost_air": {
+        "name": "Defrost Air"
+      },
+      "CO2": {
+        "name": "Carbon Dioxide"
+      },
+      "humidity_1": {
+        "name": "Humidity 1"
+      },
+      "humidity_2": {
+        "name": "Humidity 2"
+      },
+      "pressure_supply_air": {
+        "name": "Pressure Supply Air"
+      },
+      "pressure_extract_air": {
+        "name": "Pressure Extract Air"
+      },
+      "airflow_supply_air": {
+        "name": "Airflow Supply Air"
+      },
+      "airflow_extract_air": {
+        "name": "Airflow Extract Air"
+      },
+      "fan_speed_supply_air": {
+        "name": "Fan Speed Supply Air"
+      },
+      "fan_speed_extract_air": {
+        "name": "Fan Speed Extract Air"
+      },
+      "post_heating": {
+        "name": "Post Heating"
+      },
+      "pre_heating": {
+        "name": "Pre Heating"
+      },
+      "cooling": {
+        "name": "Cooling"
+      },
+      "rotary_heat_exchanger": {
+        "name": "Rotary Heat Exchanger"
+      },
+      "active_temperature_setpoint": {
+        "name": "Active Temperature Setpoint"
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "menu_options": {
+          "extract_fan": "Extract fan",
+          "supply_fan": "Supply fan",
+          "temperature": "Temperature",
+          "air_quality": "Air Quality",
+          "misc": "Miscellaneous"
+        },
+        "description": "Note that incorrect parameter settings can cause moisture problems, operational disruption and other types of malfunction.\nFor this reason, the settings must be configured by suitably qualified professionals.",
+        "title": "Fläktgroup Device Configuration"
+      },
+      "extract_fan": {
+        "description": "The speeds for each operating mode",
+        "data": {
+          "extract_fan_config_low": "Low/Tickle",
+          "extract_fan_config_normal": "Normal",
+          "extract_fan_config_high": "High/Boost",
+          "extract_fan_config_cooker_hood": "Cooker hood",
+          "extract_fan_config_fireplace": "Fireplace"
+        },
+        "data_description": {
+          "extract_fan_config_low": "{extract_fan_config_low_result}",
+          "extract_fan_config_normal": "{extract_fan_config_normal_result}",
+          "extract_fan_config_high": "{extract_fan_config_high_result}",
+          "extract_fan_config_cooker_hood": "{extract_fan_config_cooker_hood_result}",
+          "extract_fan_config_fireplace": "{extract_fan_config_fireplace_result}"
+        },
+        "title": "Extract fan configuration"
+      },
+      "supply_fan": {
+        "description": "The speeds for each operating mode",
+        "data": {
+          "supply_fan_config_low": "Low/Tickle",
+          "supply_fan_config_normal": "Normal",
+          "supply_fan_config_high": "High/Boost",
+          "supply_fan_config_cooker_hood": "Cooker hood",
+          "supply_fan_config_fireplace": "Fireplace"
+        },
+        "data_description": {
+          "supply_fan_config_low": "{supply_fan_config_low_result}",
+          "supply_fan_config_normal": "{supply_fan_config_normal_result}",
+          "supply_fan_config_high": "{supply_fan_config_high_result}",
+          "supply_fan_config_cooker_hood": "{supply_fan_config_cooker_hood_result}",
+          "supply_fan_config_fireplace": "{supply_fan_config_fireplace_result}"
+        },
+        "title": "Supply fan configuration"
+      },
+      "temperature": {
+        "data": {
+          "temperature_set_point": "Temperature Set Point",
+          "min_supply_temperature": "Min Supply Temperature",
+          "max_supply_temperature": "Max Supply Temperature"
+        },
+        "data_description": {
+          "temperature_set_point": "{temperature_set_point_result}",
+          "min_supply_temperature": "{min_supply_temperature_result}",
+          "max_supply_temperature": "{max_supply_temperature_result}"
+        },
+        "title": "Temperature configuration"
+      },
+      "air_quality": {
+        "description": "This function regulates towards a preset setpoint. The fan speed is automatically adjusted to achieve the desired CO2 level.\n NOTE! Only available if optional moisture control or CO2 control is activated.",
+        "data": {
+          "set_point_co2": "Set point CO2"
+        },
+        "data_description": {
+          "set_point_co2": "{set_point_co2_result}"
+        },
+        "title": "Air Quality Configuration"
+      },
+      "misc": {
+        "data": {
+          "dirty_filter_alarm_time": "Dirty Filter Alarm Time"
+        },
+        "data_description": {
+          "dirty_filter_alarm_time": "{dirty_filter_alarm_time_result}"
+        },
+        "title": "Miscellaneous Configuration"
+      }
+    },
+    "error": {
+      "error_register_write": "Error writing data to register"
+    }
+  },
+  "config": {
+    "step": {
+      "user": {
+        "title": "Set up FläktGroup Modbus device",
+        "data": {
+          "name": "[%key:common::config_flow::data::name%]",
+          "host": "[%key:common::config_flow::data::host%]",
+          "port": "[%key:common::config_flow::data::port%]",
+          "update_interval": "Update interval"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "[%key:common::config_flow::error::cannot_connect%]"
+    }
+  }
+}
