@@ -3383,6 +3383,12 @@
       "config_flow": false,
       "iot_class": "local_polling"
     },
+    "m2tech": {
+      "name": "m2tech_rfcomm",
+      "integration_type": "hub",
+      "config_flow": true,
+      "iot_class": "local_polling"
+    },
     "mailgun": {
       "name": "Mailgun",
       "integration_type": "hub",
