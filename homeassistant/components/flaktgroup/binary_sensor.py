@@ -308,7 +308,7 @@ def _binary_sensor_description(
     )
 
 
-@dataclass
+@dataclass(kw_only=True)
 class ModbusDatapointBinarySensorDescription(
     ModbusDatapointDescriptionMixin, BinarySensorEntityDescription
 ):

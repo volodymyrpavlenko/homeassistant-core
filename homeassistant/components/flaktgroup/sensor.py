@@ -30,7 +30,7 @@ _LOGGER = logging.getLogger(__name__)
 PARALLEL_UPDATES = 1
 
 
-@dataclass
+@dataclass(kw_only=True)
 class ModbusDatapointSensorDescription(
     ModbusDatapointDescriptionMixin, SensorEntityDescription
 ):
