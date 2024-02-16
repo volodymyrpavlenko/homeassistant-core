@@ -1,12 +1,11 @@
 {
   "domain": "m2tech",
   "name": "M2Tech Young MkIII",
+  "version": "0.1",
   "codeowners": ["@volodymyrpavlenko"],
-  "dependencies": [],
+  "config_flow": true,
+  "loggers": ["m2tech"],
   "documentation": "https://www.home-assistant.io/integrations/m2tech",
-  "homekit": {},
   "iot_class": "local_polling",
-  "requirements": ["pyserial-asyncio==0.6"],
-  "ssdp": [],
-  "zeroconf": []
+  "requirements": ["pyserial-asyncio==0.6"]
 }
