@@ -1,8 +1,9 @@
 import logging
 
-from homeassistant.components.m2tech.m2tech_serial_protocol import UpdateListener
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
+
+from .m2tech_serial_protocol import UpdateListener
 
 _LOGGER = logging.getLogger(__name__)
 

@@ -1,6 +1,6 @@
 import asyncio
-from enum import IntEnum
 import logging
+from enum import IntEnum
 
 import serial_asyncio
 

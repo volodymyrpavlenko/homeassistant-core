@@ -5,10 +5,10 @@ from typing import Any
 
 import voluptuous as vol
 
+import homeassistant.helpers.config_validation as cv
 from homeassistant.config_entries import ConfigFlow
 from homeassistant.const import CONF_DEVICE, CONF_NAME
 from homeassistant.data_entry_flow import FlowResult
-import homeassistant.helpers.config_validation as cv
 
 from . import DOMAIN
 

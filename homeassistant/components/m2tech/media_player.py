@@ -6,14 +6,7 @@ import logging
 import serial_asyncio
 import voluptuous as vol
 
-from homeassistant.components.m2tech.m2tech_data_update_coordinator import (
-    M2TechDataUpdateCoordinator,
-)
-from homeassistant.components.m2tech.m2tech_serial_protocol import (
-    INPUTS,
-    InputChunkProtocol,
-    UnitState,
-)
+import homeassistant.helpers.config_validation as cv
 from homeassistant.components.media_player import (
     PLATFORM_SCHEMA,
     MediaPlayerEntity,
@@ -23,12 +16,13 @@ from homeassistant.components.media_player import (
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import CONF_DEVICE, CONF_NAME
 from homeassistant.core import HomeAssistant, callback
-import homeassistant.helpers.config_validation as cv
 from homeassistant.helpers.device_registry import DeviceInfo
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
 
 from . import DOMAIN
+from .m2tech_data_update_coordinator import M2TechDataUpdateCoordinator
+from .m2tech_serial_protocol import INPUTS, InputChunkProtocol, UnitState
 
 _LOGGER = logging.getLogger(__name__)
 
