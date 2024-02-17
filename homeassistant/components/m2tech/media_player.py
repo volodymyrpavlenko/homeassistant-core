@@ -9,6 +9,7 @@ import voluptuous as vol
 import homeassistant.helpers.config_validation as cv
 from homeassistant.components.media_player import (
     PLATFORM_SCHEMA,
+    MediaPlayerDeviceClass,
     MediaPlayerEntity,
     MediaPlayerEntityFeature,
     MediaPlayerState,
@@ -29,7 +30,8 @@ _LOGGER = logging.getLogger(__name__)
 DEFAULT_NAME = "M2Tech Young MkIII"
 
 SUPPORT_M2TECH = (
-    MediaPlayerEntityFeature.VOLUME_SET
+    MediaPlayerEntityFeature.VOLUME_STEP
+    | MediaPlayerEntityFeature.VOLUME_SET
     | MediaPlayerEntityFeature.VOLUME_MUTE
     | MediaPlayerEntityFeature.TURN_ON
     | MediaPlayerEntityFeature.TURN_OFF
@@ -90,6 +92,7 @@ class M2TechYoungMkIIIDevice(CoordinatorEntity, MediaPlayerEntity):
             name=self._name,
         )
         self._attr_source_list = list(INPUTS.keys())
+        self._attr_device_class = MediaPlayerDeviceClass.RECEIVER
         self._attr_audio_type = None
         self._attr_frequency = None
 
