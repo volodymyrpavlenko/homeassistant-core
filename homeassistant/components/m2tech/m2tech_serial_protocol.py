@@ -1,6 +1,6 @@
 import asyncio
-import logging
 from enum import IntEnum
+import logging
 
 import serial_asyncio
 
@@ -166,6 +166,7 @@ class InputChunkProtocol(asyncio.Protocol):
         _LOGGER.warning("Serial connection closed: %s", exc)
 
     def process_line(self, line):
+        _LOGGER.debug("Recieved line: %s" % line)
         split = line.split(":", maxsplit=2)
         match split[0]:
             case "RDY":

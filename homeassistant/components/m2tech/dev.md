@@ -17,3 +17,9 @@ socat pty,link=/Users/volodymyrp/dev/_own/m2tech/m2techserial,waitslave,echo=1 \
 EXEC:"ssh dreamer@192.168.2.3 socat - /dev/rfcomm/rfcomm0,nonblock,rawer"; done
 ```
 
+When running, check thad inode is the same in /dev/rfcomm0 and /dev/rfcomm/rfcomm0
+```bash
+ls -lai /dev/rfcomm*
+OR
+stat /dev/rfcomm0 && stat /dev/rfcomm/rfcomm0
+```
