@@ -153,7 +153,7 @@ class FlaktgroupConfigFlowHandler(config_entries.ConfigFlow, domain=DOMAIN):
             update_interval = user_input[CONF_UPDATE_INTERVAL]
 
             try:
-                client = ModbusTcpClient(host, port)
+                client = ModbusTcpClient(host, port=port)
                 connected = client.connect()
                 client.close()
             except ModbusException as exception_error:

@@ -1,6 +1,7 @@
 {
   "domain": "flaktgroup",
   "name": "Fläktgroup",
+  "version": "0.1",
   "codeowners": ["@volodymyrpavlenko"],
   "config_flow": true,
   "documentation": "https://www.home-assistant.io/components/flaktgroup",
