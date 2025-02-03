@@ -1,4 +1,5 @@
 """Modbus Data Update Coordinator."""
+
 from collections.abc import Callable, Iterable
 from dataclasses import dataclass
 from datetime import timedelta
@@ -9,7 +10,8 @@ import math
 from pymodbus.client import AsyncModbusTcpClient
 from pymodbus.client.mixin import ModbusClientMixin
 from pymodbus.exceptions import ModbusException
-from pymodbus.pdu import ModbusResponse
+from pymodbus.pdu.bit_message import ReadCoilsResponse
+from pymodbus.pdu.register_message import ReadHoldingRegistersResponse
 
 from homeassistant.core import HomeAssistant
 from homeassistant.exceptions import ConfigEntryNotReady
@@ -146,8 +148,8 @@ class FlaktgroupModbusDataUpdateCoordinator(DataUpdateCoordinator):
 
     async def _get_int_holding_register(self, slave, address):
         try:
-            result: ModbusResponse = await self._client.read_holding_registers(
-                address=address, slave=slave
+            result: ReadHoldingRegistersResponse = (
+                await self._client.read_holding_registers(address=address, slave=slave)
             )
         except ModbusException as exception_error:
             _LOGGER.error(
@@ -168,7 +170,7 @@ class FlaktgroupModbusDataUpdateCoordinator(DataUpdateCoordinator):
 
     async def _get_int_coil(self, slave, address):
         try:
-            result: ModbusResponse = await self._client.read_coils(
+            result: ReadCoilsResponse = await self._client.read_coils(
                 address=address, slave=slave
             )
         except ModbusException as exception_error:
