@@ -1,4 +1,5 @@
 """Support for Modbus Register sensors."""
+
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -298,7 +299,7 @@ def _binary_sensor_description(
         opt["icon"] = icon
     key = slugify(coil.name)
     return ModbusDatapointBinarySensorDescription(
-        key,
+        key=key,
         translation_key=key,
         modbus_datapoint=coil.value,
         entity_category=entity_category,
@@ -308,7 +309,7 @@ def _binary_sensor_description(
     )
 
 
-@dataclass(kw_only=True)
+@dataclass(frozen=True, kw_only=True)
 class ModbusDatapointBinarySensorDescription(
     ModbusDatapointDescriptionMixin, BinarySensorEntityDescription
 ):

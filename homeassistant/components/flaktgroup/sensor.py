@@ -1,4 +1,5 @@
 """Support for Modbus Register sensors."""
+
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -30,7 +31,7 @@ _LOGGER = logging.getLogger(__name__)
 PARALLEL_UPDATES = 1
 
 
-@dataclass(kw_only=True)
+@dataclass(frozen=True, kw_only=True)
 class ModbusDatapointSensorDescription(
     ModbusDatapointDescriptionMixin, SensorEntityDescription
 ):

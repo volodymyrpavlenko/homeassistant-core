@@ -1,4 +1,5 @@
 """Support for Modbus Register sensors."""
+
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -51,7 +52,7 @@ async def async_setup_entry(
     async_add_entities(entities)
 
 
-@dataclass(kw_only=True)
+@dataclass(frozen=True, kw_only=True)
 class ModbusDatapointClimateDescription(
     ModbusDatapointDescriptionMixin, ClimateEntityDescription
 ):
