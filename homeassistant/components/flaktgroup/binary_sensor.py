@@ -327,7 +327,7 @@ class FlaktgroupBinarySensor(CoordinatorEntity, RestoreEntity, BinarySensorEntit
     ) -> None:
         """Initialize the Flaktgroup Binary Sensor."""
         assert description.modbus_datapoint is not None
-        self._attr_unique_id = f"{description.modbus_datapoint.slave}-{description.modbus_datapoint.address}"
+        self._attr_unique_id = f"{description.modbus_datapoint.device_id}-{description.modbus_datapoint.address}"
         self._attr_device_info = device_info
         self.entity_description: ModbusDatapointBinarySensorDescription = description
 

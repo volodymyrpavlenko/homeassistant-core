@@ -29,7 +29,7 @@ class ModbusDatapointType(Enum):
 class ModbusDatapoint:
     """Modbus datapoint."""
 
-    slave: int
+    device_id: int
     type: ModbusDatapointType
     address: int
     scale: float = 1
@@ -109,7 +109,7 @@ class FlaktgroupModbusDataUpdateCoordinator(DataUpdateCoordinator):
         try:
             if datapoint.type == ModbusDatapointType.HOLDING_REGISTER:
                 result = await self._client.write_register(
-                    datapoint.address, value, slave=datapoint.slave
+                    datapoint.address, value, device_id=datapoint.device_id
                 )  # type: ignore[misc] # need to ignore until a new version of pymodbus is released (see https://github.com/pymodbus-dev/pymodbus/pull/1842)
             elif datapoint.type == ModbusDatapointType.COIL:
                 raise NotImplementedError
@@ -138,16 +138,16 @@ class FlaktgroupModbusDataUpdateCoordinator(DataUpdateCoordinator):
         """Read datapoint from a holding register or a coil."""
         if datapoint.type == ModbusDatapointType.HOLDING_REGISTER:
             return await self._get_int_holding_register(
-                datapoint.slave, datapoint.address
+                datapoint.device_id, datapoint.address
             )
         if datapoint.type == ModbusDatapointType.COIL:
-            return await self._get_int_coil(datapoint.slave, datapoint.address)
+            return await self._get_int_coil(datapoint.device_id, datapoint.address)
         raise NotImplementedError
 
-    async def _get_int_holding_register(self, slave, address):
+    async def _get_int_holding_register(self, device_id, address):
         try:
             result = await self._client.read_holding_registers(
-                address=address, slave=slave
+                address=address, device_id=device_id
             )
         except ModbusException as exception_error:
             _LOGGER.error(
@@ -166,9 +166,9 @@ class FlaktgroupModbusDataUpdateCoordinator(DataUpdateCoordinator):
             )
         )
 
-    async def _get_int_coil(self, slave, address):
+    async def _get_int_coil(self, device_id, address):
         try:
-            result = await self._client.read_coils(address=address, slave=slave)
+            result = await self._client.read_coils(address=address, device_id=device_id)
         except ModbusException as exception_error:
             _LOGGER.error(
                 "Error: pymodbus thrown an exception: %s", str(exception_error)

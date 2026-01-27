@@ -9,7 +9,7 @@ DOMAIN = "flaktgroup"
 MODBUS_HUB = "modbus_hub"
 CONF_MODBUS_COORDINATOR = "modbus_coordinator"
 CONF_DEVICE_INFO = "device_info"
-FLAKTGROUP_MODBUS_SLAVE = 2
+FLAKTGROUP_MODBUS_DEVICE_ID = 2
 
 
 class FanModes(IntEnum):
@@ -31,12 +31,12 @@ class Presets(IntEnum):
 
 def _flaktgroup_holding_register(address) -> ModbusDatapoint:
     return ModbusDatapoint(
-        FLAKTGROUP_MODBUS_SLAVE, ModbusDatapointType.HOLDING_REGISTER, address
+        FLAKTGROUP_MODBUS_DEVICE_ID, ModbusDatapointType.HOLDING_REGISTER, address
     )
 
 
 def _flaktgroup_coil(address) -> ModbusDatapoint:
-    return ModbusDatapoint(FLAKTGROUP_MODBUS_SLAVE, ModbusDatapointType.COIL, address)
+    return ModbusDatapoint(FLAKTGROUP_MODBUS_DEVICE_ID, ModbusDatapointType.COIL, address)
 
 
 class HoldingRegisters(Enum):
